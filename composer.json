@@ -15,6 +15,10 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/amylian/yii2-amylian-doctrine-dbal"
     }
   ],
   "require": {
