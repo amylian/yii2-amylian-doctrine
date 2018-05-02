@@ -29,5 +29,5 @@
     "psr-4": {
       "abexto\\amylian\\yii\\doctrine\\tests\\": "tests/"
     }  
-  },
+  }
 }
