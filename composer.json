@@ -27,7 +27,7 @@
     "amylian/yii2-amylian-doctrine-dbal": "*"
   },
   "require-dev": {
-    "amylian/yii2-amyian-phpunit": "*"
+    "amylian/yii2-amylian-phpunit": "*"
   },
   "autoload-dev": {
     "psr-4": {
