@@ -63,7 +63,22 @@ class EnvironmentTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
                 ]
         ]]);
         $this->assertSame(\abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class),
-                \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class));
+                                                                                    \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class));
+    }
+
+    protected function assertCompareVersion($expected, $v1, $v2)
+    {
+        $cmpRes = version_compare($v1, $v2);
+        $this->assertEquals($expected, $cmpRes, 'compare ' . $v1 . ' / ' . $v2);
+    }
+
+    protected function testVersionCompares()
+    {
+        $this->assertCompareVersion(-1, '1.0.0', '1.0.1');
+        $this->assertCompareVersion(+1, '0.0.1', '0.0.0.8-dev');
+        $this->assertCompareVersion(-1, '2.0.0', '2.0.0.7-dev');
+        $this->assertCompareVersion(+1, '2.0.0.7-dev', '2.0.0-RC.1');
+        $this->assertCompareVersion(+1, '2.0.0.7-dev', '2.0.0.9-beta');
     }
 
 }
