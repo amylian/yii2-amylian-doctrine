@@ -42,20 +42,20 @@ namespace abexto\amylian\yii\doctrine\tests;
 class EnvironmentTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
 {
 
-    public function ImportantClasesExistTest()
+    public function testImportantClasesExist()
     {
         $this->asserTrue(class_exists(\abexto\amylian\yii\doctrine\cache\YiiCache::class));
         $this->asserTrue(class_exists(\abexto\amylian\yii\doctrine\dbal\BasicConnection::class));
         $this->asserTrue(class_exists(\abexto\amylian\yii\doctrine\dbal\Connection::class));
     }
 
-    public function PackageBootstrapTest()
+    public function testPackageBootstrap()
     {
         static::mockYiiConsoleApplication();
         \Yii::$container->has(\abexto\amylian\yii\doctrine\cache\AbstractCache::class);
     }
 
-    public function PackageBootstrapTest2()
+    public function testPackageBootstrap2()
     {
         static::mockYiiConsoleApplication(['components' => [
                 'cache' => [
