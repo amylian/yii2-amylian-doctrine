@@ -52,7 +52,8 @@ class EnvironmentTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
     public function testPackageBootstrap()
     {
         static::mockYiiConsoleApplication();
-        \Yii::$container->has(\abexto\amylian\yii\doctrine\cache\AbstractCache::class);
+        \Yii::$container->has(\abexto\amylian\yii\doctrine\common\ConfigurationInterface::class);
+        \Yii::$container->has(\abexto\amylian\yii\doctrine\common\ConnectionInterface::class);
     }
 
     public function testPackageBootstrap2()
