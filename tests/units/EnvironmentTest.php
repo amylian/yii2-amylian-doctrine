@@ -52,7 +52,7 @@ class EnvironmentTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
     public function testPackageBootstrap()
     {
         static::mockYiiConsoleApplication();
-        \Yii::$container->has(\abexto\amylian\yii\doctrine\common\ConfigurationInterface::class);
+        \Yii::$container->has(\abexto\amylian\yii\doctrine\common\BaseConfigurationInterface::class);
         \Yii::$container->has(\abexto\amylian\yii\doctrine\common\ConnectionInterface::class);
     }
 
@@ -63,8 +63,8 @@ class EnvironmentTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
                     'class' => \yii\caching\Cache::class
                 ]
         ]]);
-        $this->assertSame(\abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class),
-                                                                                    \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\AbstractCache::class));
+        $this->assertSame(\abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\BaseCache::class),
+                                                                                    \abexto\amylian\yii\doctrine\base\InstanceManager::ensure(\abexto\amylian\yii\doctrine\cache\BaseCache::class));
     }
 
 }
